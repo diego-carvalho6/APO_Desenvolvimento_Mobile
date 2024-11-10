@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_map_screen">MapScreen</string>
+    <string name="title_activity_about_screen">AboutScreen</string>
+    <string name="title_activity_weather_screen">WeatherScreen</string>
+</resources>
