@@ -73,6 +73,8 @@ fun InfoCard() {
             Spacer(modifier = Modifier.height(8.dp))
             Text("Curso: Sistemas de Informação")
             Spacer(modifier = Modifier.height(8.dp))
+            Text("Campos: Fazenda Rio Grande ")
+            Spacer(modifier = Modifier.height(8.dp))
         }
     }
 }
