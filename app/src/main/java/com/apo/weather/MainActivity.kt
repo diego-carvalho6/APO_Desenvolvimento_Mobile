@@ -142,7 +142,7 @@ class MainActivity : ComponentActivity() {
                                     Text(text = "Data: ${forecast.date}")
                                 }
                                 Text(text = "Descrição: ${forecast.description}")
-                                Text(text = "Temperatura: min ${forecast.min} - ${forecast.max}")
+                                Text(text = "Temperatura: min ${forecast.min} - max ${forecast.max}")
                             }
                         }
                     }
