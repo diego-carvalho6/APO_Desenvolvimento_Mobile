@@ -153,13 +153,14 @@ class MainActivity : ComponentActivity() {
 }
 
 suspend fun fetchCity(city: String): Results {
-    val apiKey = "258eacda"
+    val apiKey = "49af764d"
     val url = "https://api.hgbrasil.com/weather?key=$apiKey&city_name=$city"
 
     val client = OkHttpClient()
 
     val request = Request.Builder()
         .url(url)
+        .addHeader("User-Agent", "WeatherForecast/1.0 diego.sena.oliveira.carvalho@gmail.com")
         .build()
 
     return withContext(Dispatchers.IO) {
@@ -170,16 +171,16 @@ suspend fun fetchCity(city: String): Results {
                 val body = response.body?.string()
                 if (body != null) {
                     val weatherResponse = Gson().fromJson(body, WeatherResponse::class.java)
-                    weatherResponse.results
+                    return@withContext weatherResponse.results
                 } else {
-                    Results.default()
+                    return@withContext Results.default()
                 }
             } else {
-                Results.default()
+                return@withContext Results.default()
             }
         } catch (e: IOException) {
             Log.e("WeatherRequest", "Erro ao fazer requisição", e)
-            Results.default()
+            return@withContext Results.default()
         }
     }
 }
